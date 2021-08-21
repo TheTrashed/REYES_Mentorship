@@ -1,0 +1,8 @@
+set terminal postscript eps color
+set output 'plot.eps'
+
+set xlabel 'E*/m'
+set ylabel '{/Symbol r}' rotate by 0
+
+set style line 1 lt 1 lw 2.5 lc rgb "red"
+plot 'plotting_data.data' using 1:2 notitle with lines ls 1
