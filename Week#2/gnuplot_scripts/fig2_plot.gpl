@@ -1,0 +1,30 @@
+set terminal epslatex size 20cm, 10cm
+set output 'figure2.tex'
+
+set title '$f(z) = z^2$'
+
+unset key
+
+set view map
+
+set size square
+
+set xlabel "Re $z$"
+set ylabel "Im $z$"
+
+set xtics border scale 0,0
+set ytics border scale 0,0
+set cbtics border scale 0,0
+
+set xrange[-3:3]
+set yrange[-3:3]
+
+set cblabel "Phase Angle"
+
+set palette mode HSV
+set palette defined ( 0 0 1 1, 1 1 1 1)
+
+rgb(r,g,b) = int(r) * 65536 + int(g) * 256 + int(b)
+set cbtics ('0' 65536, '$2\pi$' 16711680)
+
+splot 'complex_data.dat' using 1:2:(rgb($3,$4,$5)) with pm3d lc rgb variable nocontour
