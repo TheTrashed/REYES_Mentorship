@@ -18,14 +18,10 @@ typedef struct {
 	double value;
 } HSV;
 
-double	mod		(double	 a,
-			 int	 b);
+double mod (double a, int b);
 
-HSV	colorize	(double	 x,
-			 double	 y,
-			 double	 norm);
+HSV colorize (double x, double y, double norm);
 
-void	hsv_to_rgb	(HSV	*hsv_struct,
-			 RGB	*rgb_struct);
+void hsv_to_rgb (HSV *hsv_struct, RGB *rgb_struct);
 
 #endif

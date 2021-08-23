@@ -18,7 +18,7 @@ $(TARGET):	$(OBJECTS)
 	@$(LINKER) $(OBJECTS) $(LFLAGS) -o $@
 
 $(OBJECTS):	$(OBJDIR)/%.o : $(SRCDIR)/%.c $(INCLUDES) $(OBJDIR)
-	@$(CC)	$(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR):
 	mkdir $(OBJDIR)

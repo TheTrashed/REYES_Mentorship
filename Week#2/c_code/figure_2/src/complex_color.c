@@ -1,18 +1,7 @@
 #include "complex_color.h"
 
-double
-mod (double a,
-     int   b)
-{
-	int tmp = a / b;
-
-	return a - (tmp * b);
-}
-
 HSV
-colorize (double x,
-	  double y,
-	  double norm)
+colorize (double x, double y, double norm)
 {
 	HSV color;
 	if (!almost_equal(x, 0) && !almost_equal(y, 0)) {
@@ -30,8 +19,7 @@ colorize (double x,
 
 
 void
-hsv_to_rgb (HSV  *hsv_struct,
-	    RGB  *rgb_struct)
+hsv_to_rgb (HSV  *hsv_struct, RGB  *rgb_struct)
 {
 	double chroma = hsv_struct->value * hsv_struct->saturation;
 	double hue_prime = hsv_struct->hue / 60;

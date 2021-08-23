@@ -7,7 +7,8 @@
 #define   MAX(a, b)   ((a) > (b) ? a : b)
 #define   MIN(a, b)   ((a) < (b) ? a : b)
 
-int   almost_equal    (double a,
-		       double b);
+int almost_equal (double a, double b);
+
+double mod (double a, int b);
 
 #endif
