@@ -1,0 +1,30 @@
+set terminal epslatex size 12cm,12cm
+set output "figure3.tex"
+
+set xlabel 'Re $z$'
+set ylabel 'Im $z$'
+unset cbtics
+unset colorbox
+
+set size square
+
+set hidden3d
+
+set palette defined (0 0 0 0.5, 1 0 0 1, 2 0 0.5 1, 4 0.5 1 0.5)
+
+set multiplot layout 1,2 rowsfirst spacing 0.025,0.025
+
+unset label
+unset xtics
+unset ytics
+
+
+set xtics -2,2,2
+set ytics -2,2,2
+set ztics -8,2,8
+
+set title 'Real'
+splot 'plotting_data.dat' using 1:2:3 notitle with pm3d
+
+set title 'Imag'
+splot 'plotting_data.dat' using 1:2:4 notitle with pm3d
