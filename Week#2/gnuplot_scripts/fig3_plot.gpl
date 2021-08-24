@@ -3,7 +3,6 @@ set output "figure3.tex"
 
 set xlabel 'Re $z$'
 set ylabel 'Im $z$'
-unset cbtics
 unset colorbox
 
 set size square
@@ -23,8 +22,8 @@ set xtics -2,2,2
 set ytics -2,2,2
 set ztics -8,2,8
 
-set title 'Real'
+set title 'Re $f(z)$'
 splot 'plotting_data.dat' using 1:2:3 notitle with pm3d
 
-set title 'Imag'
+set title 'Im $f(z)$'
 splot 'plotting_data.dat' using 1:2:4 notitle with pm3d
