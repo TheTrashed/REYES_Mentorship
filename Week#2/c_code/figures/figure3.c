@@ -1,7 +1,5 @@
-#include <complex.h>
-#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "function.h"
+#include "file_handle.h"
 
 #define	MIN_X	-2.0
 #define	MAX_X	2.0
@@ -29,8 +27,8 @@ main (void)
 	while (x <= (double) MAX_X + x_increment) {
 		y = MIN_Y;
 		while (y <= (double) MAX_Y + y_increment) {
-			f_z = cpow(x + I*y, 2);				// The function f(z) = z^2
-			fprintf(fp, "%.15f\t%.15f\t%.15f\t%.15f\n", x, y, creal(f_z), cimag(f_z));
+			f_z = comp_func(x, y);				// The function f(z) = z^2
+			write_file_3d(fp, x, y, creal(f_z), cimag(f_z));
 
 			y += y_increment;
 		}

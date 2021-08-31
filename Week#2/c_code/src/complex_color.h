@@ -2,8 +2,8 @@
 #define __COMPLEX_COLOR_H__
 
 #include <stdint.h>
-#include <math.h>
 #include <complex.h>
+#include <math.h>
 #include "float_comparison.h"
 
 typedef struct {

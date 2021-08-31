@@ -1,5 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+// Should be moved to the src dir before compilation so that the header files can be linked using the MakeFile
+#include "file_handle.h"
+#include "function.h"
 #include "complex_color.h"
 
 #define   MIN_X  -3.0
@@ -32,12 +33,12 @@ main (void)
 	while (x <= (double) MAX_X) {
 		y = MIN_Y;
 		while (y <= (double) MAX_Y) {
-			f_z = cpow(x + I*y, 2);
-			norm = sqrt(pow(creal(f_z), 2) + pow(cimag(f_z), 2));
+			f_z = comp_func(x, y);
+			norm = cmag(f_z);
 
 			hsv_color = colorize(creal(f_z), cimag(f_z), norm);
 			hsv_to_rgb(&hsv_color, &rgb_color);
-			fprintf(fp, "%.15f\t%.15f\t%d\t%d\t%d\n", x, y, \
+			write_file_dom_col(fp, x, y, \
 					rgb_color.red, rgb_color.green, rgb_color.blue);
 			y += y_increment;
 		}

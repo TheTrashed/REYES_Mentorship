@@ -1,4 +1,4 @@
-TARGET	=	domain_coloring
+TARGET	=	ok# Name of executable
 
 CC	= 	gcc
 CFLAGS	= 	-Wall -O -I./$(SRCDIR)
