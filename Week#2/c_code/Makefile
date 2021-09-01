@@ -1,4 +1,4 @@
-TARGET	=	ok# Name of executable
+TARGET	=	# Name of executable
 
 CC	= 	gcc
 CFLAGS	= 	-Wall -O -I./$(SRCDIR)
